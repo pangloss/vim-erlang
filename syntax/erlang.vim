@@ -83,6 +83,8 @@ syn region erlangAtom            start=/'/ end=/'/ contained
 " Records {{{1
 syn match erlangRecord          /#\a\w*\>/
 
+syn match erlangQuoteChar      "$\\\""
+
 " String {{{1
 syn region erlangString    start=/"/ skip=/\\"/ end=/"/ contains=erlangModifier
 
@@ -175,6 +177,7 @@ endif
 
 " Link Erlang stuff to Vim groups {{{1
 hi link erlangTodo         Todo
+hi link erlangQuoteChar    String
 hi link erlangString       String
 hi link erlangModifier     SpecialChar
 hi link erlangComment      Comment
