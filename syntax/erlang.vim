@@ -86,7 +86,7 @@ syn match erlangRecord          /#\a\w*\>/
 syn match erlangQuoteChar      "$\\\""
 
 " String {{{1
-syn region erlangString    start=/"/ skip=/\\"/ end=/"/ contains=erlangModifier
+syn region erlangString    start=/"/ skip=/\\\\\|\\"/ end=/"/ contains=erlangModifier
 
 " Delimiters {{{1
 syn match erlangDelimiter        /:/
