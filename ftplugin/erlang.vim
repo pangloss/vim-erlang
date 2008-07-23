@@ -6,8 +6,8 @@
 " ------------------------------------------------------------------------------
 " Usage: {{{1
 "
-" To disable folding put
-" let g:erlangFold=0
+" To enable folding put
+" let g:erlangFold=1
 " in your vimrc
 "
 " Folding will make only one fold for a complete function, even though it has
@@ -41,7 +41,7 @@ function s:SetErlangOptions()
 	setlocal omnifunc=erlangcomplete#Complete
 
 	" {{{2 Settings for folding
-	if (!exists("g:erlangFold")) || g:erlangFold
+	if (exists("g:erlangFold")) && g:erlangFold
 		setlocal foldmethod=expr
 		setlocal foldexpr=GetErlangFold(v:lnum)
 		setlocal foldtext=ErlangFoldText()
